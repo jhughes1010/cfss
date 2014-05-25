@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Care Scheduler</title>
+
+
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>Your Page Title Here :)</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+  ================================================== -->
+	<%= stylesheet_link_tag"base"%>
+	<%= stylesheet_link_tag"skeleton"%>
+	<%= stylesheet_link_tag"layout"%>
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+</head>
+<body>
+    
+	<div class="container">
+		<div class="sixteen columns">
+            
+			<h1 class="remove-bottom" style="margin-top: 40px">Care Scheduler</h1>
+			<h5>Version 0.1</h5>
+			<hr />
+    
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, :id => "flash_#{name}" %>
+    <% end %>
+</div>
+<%= yield %>
+
+<div class="sixteen columns">
+    <hr />
+    <a href="/main/" class="button">Home</a>
+    <a href="/log_out/" class="button">Logout</a>
+    James Hughes 2014
+</div>
+</div>
+</body>
+</html>

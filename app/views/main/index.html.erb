@@ -1,0 +1,24 @@
+<div class="four columns">
+    <p>My Nursing Home<br>
+    Colorado Springs, CO</p>
+    <%= @today.strftime("%B %d, %Y")%>
+    <p>Work Week:<%= @today.cweek%></p>
+</div>
+<div class="four columns">
+    <h3>Scheduler</h3>
+    <a href="#" class="button">View Schedule</a>
+    <a href="#" class="button">Edit Schedule</a>
+</div>
+		    
+<div class="four columns">
+    <h3>Reports</h3>
+    <a href="#" class="button">Email Schedule</a>
+    <a href="#" class="button">TXT Schedule</a>
+</div>
+
+<div class="four columns">
+    <h3>Maintenance</h3>
+    <a href="/employees/" class="button">Edit Employees</a>
+    <a href="#" class="button">Edit Shifts</a>
+    <a href="#" class="button">Edit Positions</a>
+</div>
