@@ -20,6 +20,17 @@
 	<%= stylesheet_link_tag"base"%>
 	<%= stylesheet_link_tag"skeleton"%>
 	<%= stylesheet_link_tag"layout"%>
+    
+    <%= javascript_include_tag "jquery-1.10.2.js" %>
+    <%= javascript_include_tag "jquery-ui-1.10.4.min.js" %>
+    
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
+    
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.0/css/jquery.dataTables.css">
+  
+    <!-- DataTables -->
+    <script type="text/javascript" charset="utf8" src="http://cdn.datatables.net/1.10.0/js/jquery.dataTables.js"></script>
 
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -37,7 +48,7 @@
 	<div class="container">
 		<div class="sixteen columns">
             
-			<h1 class="remove-bottom" style="margin-top: 40px">Care Scheduler</h1>
+			<h2 class="remove-bottom" style="margin-top: 10px">Care Scheduler</h2>
 			<h5>Version 0.1</h5>
 			<hr />
     
@@ -51,8 +62,9 @@
     <hr />
     <a href="/main/" class="button">Home</a>
     <a href="/log_out/" class="button">Logout</a>
-    James Hughes 2014
+    &copy James Hughes 2014
 </div>
 </div>
+<%= javascript_include_tag "myscripts.js" %>
 </body>
 </html>
