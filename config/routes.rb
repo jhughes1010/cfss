@@ -1,5 +1,11 @@
 Cfss::Application.routes.draw do
 
+  resources :grids
+
+  resources :stations
+
+  resources :shifts
+
   resources :employees
 
   get "main/index"
@@ -13,6 +19,9 @@ Cfss::Application.routes.draw do
   resources :sessions
   resources :main
   resources :employees
+  resources :shifts
+  resources :stations
+  resources :grids
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
