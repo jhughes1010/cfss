@@ -7,8 +7,9 @@ Cfss::Application.routes.draw do
   resources :shifts
 
   resources :employees
-
-  get "main/index"
+  
+   get "main/index"
+   get "utility/import"
 
   get "log_out" => "sessions#destroy", :as => "log_out"
   get "login" => "sessions#login", :as => "login"
@@ -18,10 +19,8 @@ Cfss::Application.routes.draw do
   resources :users
   resources :sessions
   resources :main
-  resources :employees
-  resources :shifts
-  resources :stations
-  resources :grids
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

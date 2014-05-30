@@ -14,8 +14,8 @@
 
 <% @grids.each do |grid| %>
   <tr>
-    <td><%= grid.station_id %></td>
-    <td><%= grid.shift_id %></td>
+    <td><%= grid.shift.name %></td>
+    <td><%= grid.station.name %></td>
     <td><%= link_to 'Show', grid %></td>
     <td><%= link_to 'Edit', edit_grid_path(grid) %></td>
     <td><%= link_to 'Destroy', grid, method: :delete, data: { confirm: 'Are you sure?' } %></td>
