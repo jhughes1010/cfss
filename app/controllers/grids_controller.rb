@@ -2,10 +2,10 @@ class GridsController < ApplicationController
   # GET /grids
   # GET /grids.json
   def index
-    #@grids = Grid.all
+    @grids = Grid.all
     #@stations = Station.all
     #@shifts = Shift.names
-    @grids = Grid.get_matrix()
+    #@grids = Grid.get_matrix()
 
     respond_to do |format|
       format.html # index.html.erb
