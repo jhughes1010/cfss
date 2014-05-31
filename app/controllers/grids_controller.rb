@@ -2,6 +2,7 @@ class GridsController < ApplicationController
   # GET /grids
   # GET /grids.json
   def index
+    #Grid.includes(:station, :shift)
     @grids = Grid.all
     #@stations = Station.all
     #@shifts = Shift.names
