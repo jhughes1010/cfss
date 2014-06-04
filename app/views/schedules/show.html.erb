@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Date:</b>
+  <%= @schedule.date %>
+</p>
+
+<p>
+  <b>Employee:</b>
+  <%= @schedule.employee_id %>
+</p>
+
+<p>
+  <b>Grid:</b>
+  <%= @schedule.grid_id %>
+</p>
+
+<p>
+  <b>Workweek:</b>
+  <%= @schedule.workweek %>
+</p>
+
+<p>
+  <b>Year:</b>
+  <%= @schedule.year %>
+</p>
+
+
+<%= link_to 'Edit', edit_schedule_path(@schedule) %> |
+<%= link_to 'Back', schedules_path %>

@@ -1,0 +1,45 @@
+<h4> Schedule for WW: <%= @workweek %> </h4>
+Dates:
+<%= @today %>
+<table id="schedule" class="display" cellspacing="0" width="100%">
+        <thead>
+        <tr>
+          <th>Position</th>
+          <th>Su</th>
+          <th>Mo</th>
+          <th>Tu</th>
+          <th>We</th>
+          <th>Th</th>
+          <th>Fr</th>
+          <th>Sa</th>
+          <th>Su</th>
+          <th>Mo</th>
+          <th>Tu</th>
+          <th>We</th>
+          <th>Th</th>
+          <th>Fr</th>
+          <th>Sa</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @grids.each do |grid|%>
+        <tr>
+           <td> <%= grid.name %> <br /> </td>
+           <td>Joe S</td>
+           <td></td>
+           <td></td>
+           <td></td>
+           <td></td>
+           <td></td>
+           <td></td>
+           <td></td>
+           <td></td>
+           <td>Susie Q</td>
+           <td></td>
+           <td></td>
+           <td></td>
+           <td></td>
+        </tr>
+  <% end %>
+    </tbody>
+</table>

@@ -4,9 +4,6 @@ class GridsController < ApplicationController
   def index
     #Grid.includes(:station, :shift)
     @grids = Grid.all
-    #@stations = Station.all
-    #@shifts = Shift.names
-    #@grids = Grid.get_matrix()
 
     respond_to do |format|
       format.html # index.html.erb

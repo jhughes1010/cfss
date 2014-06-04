@@ -1,0 +1,29 @@
+<%= form_for(@role) do |f| %>
+  <% if @role.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@role.errors.count, "error") %> prohibited this role from being saved:</h2>
+
+      <ul>
+      <% @role.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.select(:employee_id, Employee.order("name").collect {|a| [a.name, a.id]}) -%>
+  </div>
+
+  <div class="field">
+    <%= f.label :shift_id %><br />
+    <%= f.select(:shift_id, Shift.order("name").collect {|a| [a.name, a.id]}) -%>
+  </div>
+  <div class="field">
+    <%= f.label :station_id %><br />
+    <%= f.select(:station_id, Station.order("name").collect {|a| [a.name, a.id]}) -%>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

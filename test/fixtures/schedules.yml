@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  date: 2014-06-01
+  employee_id: 1
+  grid_id: 1
+  workweek: 1
+  year: 1
+
+two:
+  date: 2014-06-01
+  employee_id: 1
+  grid_id: 1
+  workweek: 1
+  year: 1

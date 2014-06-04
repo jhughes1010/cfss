@@ -3,8 +3,9 @@
 <table id="tables" class="display" cellspacing="0" width="100%">
     <thead>
   <tr>
-    <th>Station</th>
+    <th>Name</th>
     <th>Shift</th>
+    <th>Station</th>
     <th></th>
     <th></th>
     <th></th>
@@ -14,8 +15,9 @@
 
 <% @grids.each do |grid| %>
   <tr>
-    <td><%= grid.shift.name %></td>
-    <td><%= grid.station.name %></td>
+    <td><%= grid.name %></td> 
+    <td><%= grid.shift.name %></td> 
+    <td><%= grid.station.name %></td> 
     <td><%= link_to 'Show', grid %></td>
     <td><%= link_to 'Edit', edit_grid_path(grid) %></td>
     <td><%= link_to 'Destroy', grid, method: :delete, data: { confirm: 'Are you sure?' } %></td>

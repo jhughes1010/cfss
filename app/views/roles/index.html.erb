@@ -1,0 +1,32 @@
+<h4>Roles</h4>
+Employee roles in the organization<br />
+
+<table id="tables" class="display" cellspacing="0" width="100%">
+    <thead>
+  <tr>
+    <th>Employee</th>
+    <th>Shift</th>
+    <th>Station</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+</thead>
+<tbody>
+
+<% @roles.each do |role| %>
+  <tr>
+    <td><%= role.employee.name %></td>
+    <td><%= role.shift.name %> </td>
+    <td> <%= role.station.name %></td>
+    <td><%= link_to 'Show', role %></td>
+    <td><%= link_to 'Edit', edit_role_path(role) %></td>
+    <td><%= link_to 'Destroy', role, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+
+<br />
+
+<%= link_to 'New Role', new_role_path %>
