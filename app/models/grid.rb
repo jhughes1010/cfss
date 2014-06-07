@@ -3,6 +3,9 @@ class Grid < ActiveRecord::Base
   #has_many :shifts
   belongs_to :shift
   belongs_to :station
+  belongs_to :employee
+  
+  has_many :schedules
   
   before_save :create_grid_name
   

@@ -17,8 +17,8 @@
 <% @schedules.each do |schedule| %>
   <tr>
     <td><%= schedule.date %></td>
-    <td><%= schedule.employee_id %></td>
-    <td><%= schedule.grid_id %></td>
+    <td><%= schedule.employee.name %></td>
+    <td><%= schedule.grid.name %></td>
     <td><%= schedule.workweek %></td>
     <td><%= schedule.year %></td>
     <td><%= link_to 'Show', schedule %></td>

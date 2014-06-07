@@ -1,8 +1,8 @@
 Cfss::Application.routes.draw do
 
-  get "schedule/index"
+  get "schedule_main/index"
 
-  resources :schedule
+  resources :schedule_main
 
   resources :schedules
 
@@ -18,7 +18,7 @@ Cfss::Application.routes.draw do
   
    get "main/index"
    get "utility/import"
-   get "schedule/index"
+   get "schedule_main/index"
 
   get "log_out" => "sessions#destroy", :as => "log_out"
   get "login" => "sessions#login", :as => "login"
