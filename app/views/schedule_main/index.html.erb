@@ -1,75 +1,38 @@
 <div class="sixteen columns">
     <h4> Schedule for WW: <%= @workweek %> </h4>
-Dates:
-<%= @today %>
+Dates: <%= @today %> - <%= @today.next_day(27)%>
 <table id="schedule" class="display" cellspacing="0" width="100%">
         <thead>
         <tr>
           <th>Position</th>
-          <th>Su:<%= @today%></th>
-          <th>Mo</th>
-          <th>Tu</th>
-          <th>We</th>
-          <th>Th</th>
-          <th>Fr</th>
-          <th>Sa</th>
-          <th>2-Su</th>
-          <th>Mo</th>
-          <th>Tu</th>
-          <th>We</th>
-          <th>Th</th>
-          <th>Fr</th>
-          <th>Sa</th>
-          <th>3-Su</th>
-          <th>Mo</th>
-          <th>Tu</th>
-          <th>We</th>
-          <th>Th</th>
-          <th>Fr</th>
-          <th>Sa</th>
-          <th>4-Su</th>
-          <th>Mo</th>
-          <th>Tu</th>
-          <th>We</th>
-          <th>Th</th>
-          <th>Fr</th>
-          <th>Sa</th>
+          <% (0..27).each do |d| %>
+          <th><%= @today.next_day(d).strftime("%a-%m/%d/%y")%></th>
+          <% end %>
+
         </tr>
     </thead>
     <tbody>
         <% @grids.each do |grid|%>
         <tr>
            <td> <%= grid.name %> <br /> </td>
-           <td>Joe S</td>
-           <td>Fred</td>
-           <td></td>
-           <td></td>
-           <td></td>
-           <td></td>
-           <td></td>
-           <td></td>
-           <td></td>
-           <td>Susie Q</td>
-           <td></td>
-           <td></td>
-           <td></td>
-           <td>Thomas</td>
-           <td>Joe S</td>
-           <td>Fred</td>
-           <td></td>
-           <td></td>
-           <td></td>
-           <td></td>
-           <td></td>
-           <td></td>
-           <td></td>
-           <td>Susie Q</td>
-           <td></td>
-           <td></td>
-           <td></td>
-           <td>Thomas</td>
+           <% (0..27).each do |d|%>
+               <% unless @schedules[grid.id] == nil %>
+               <% record_found = false %>
+                   <% @schedules[grid.id].each do |s|%>
+                       <% if ( s.date == @today.next_day(d)) %>
+                           <td><%= s.employee.name %></td>
+                           <% record_found = true %>
+                       <% end %>
+                   <% end %>
+                   <% if !record_found %>
+                   <td>--</td>
+                   <% end %>
+               <% else %>
+                   <td>00</td> 
+               <% end %>
+           <% end %>
         </tr>
-  <% end %>
+        <% end %>
     </tbody>
 </table>
 </div>

@@ -9,9 +9,9 @@ class Grid < ActiveRecord::Base
   
   before_save :create_grid_name
   
-  def self.get_matrix()
-    select("'shifts.name', 'stations.name', grids.id, grids.shift_id, grids.station_id" ).joins("JOIN stations ON grids.station_id = stations.id").joins("JOIN shifts ON grids.shift_id = shifts.id").order("shifts.name, stations.name")
-  end
+  #def self.pullCurrent(workweek)
+#    select("grids.* , schedules.* " ).joins("LEFT JOIN schedules ON grids.id = schedules.grid_id").order("grids.name")
+ # end
   
   
   def create_grid_name
