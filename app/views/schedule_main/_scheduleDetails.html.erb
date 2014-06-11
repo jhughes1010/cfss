@@ -1,0 +1,12 @@
+<% @grids.each do |grid|%>
+        <tr>
+           <td> <%= grid.name %> <br /> </td>
+           <% (0..27).each do |d|%>
+           <td>
+               <% unless @schedules[grid.id]=="EMPTY"%>
+                   <%= @schedules[grid.id].fetch(@today.next_day(d),"")%>
+               <% end %>
+           </td>
+           <% end %>
+        </tr>
+        <% end %>

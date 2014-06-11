@@ -6,33 +6,16 @@ Dates: <%= @today %> - <%= @today.next_day(27)%>
         <tr>
           <th>Position</th>
           <% (0..27).each do |d| %>
-          <th><%= @today.next_day(d).strftime("%a-%m/%d/%y")%></th>
+              <th>
+                  <%= @today.next_day(d).strftime("%a-%m/%d/%y")%>
+              </th>
           <% end %>
 
         </tr>
     </thead>
     <tbody>
-        <% @grids.each do |grid|%>
-        <tr>
-           <td> <%= grid.name %> <br /> </td>
-           <% (0..27).each do |d|%>
-               <% unless @schedules[grid.id] == nil %>
-               <% record_found = false %>
-                   <% @schedules[grid.id].each do |s|%>
-                       <% if ( s.date == @today.next_day(d)) %>
-                           <td><%= s.employee.name %></td>
-                           <% record_found = true %>
-                       <% end %>
-                   <% end %>
-                   <% if !record_found %>
-                   <td>--</td>
-                   <% end %>
-               <% else %>
-                   <td>00</td> 
-               <% end %>
-           <% end %>
-        </tr>
-        <% end %>
+        <%= render :partial => 'scheduleDetails' %>
     </tbody>
 </table>
 </div>
+

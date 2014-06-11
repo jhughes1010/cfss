@@ -12,7 +12,20 @@ class Schedule < ActiveRecord::Base
   
   def self.horizon(workweek)
     schedules = self.where("workweek >= ? and workweek < ?", workweek, workweek + 4).order("grid_id,date")
-    schedules.group_by{ |s| s.grid_id}
+    gridSchedules = schedules.group_by{ |s| s.grid_id}
+    #create hash that is grid_ids x 4WW and initialize to "unassigned"
+    scheduleMatrix = Hash.new("EMPTY")
+    #copy over gridSchedules
+    gridSchedules.each do |key, value|
+      days = value
+      #days.each do |d|
+        #scheduleMatrix[key] = {d.date => d.employee.name}
+        scheduleMatrix[key] = Hash[ days.map{ |d| [d.date, d.employee.name] } ]
+        #end
+    end
+    #return hash
+    scheduleMatrix
+    
   end 
    
   def create_ww_year_details
