@@ -4,7 +4,7 @@
            <% (0..27).each do |d|%>
            <td>
                <% unless @schedules[grid.id]=="EMPTY"%>
-                   <%= @schedules[grid.id].fetch(@today.next_day(d),"")%>
+                   <%= @schedules[grid.id][@today.next_day(d)] %>
                <% end %>
            </td>
            <% end %>
