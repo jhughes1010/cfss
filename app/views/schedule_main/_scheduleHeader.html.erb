@@ -1,0 +1,11 @@
+<thead>
+<tr>
+  <th>Position</th>
+  <% (0..27).each do |day| %>
+      <th>
+          <%= @today.next_day(day).strftime("%a-%m/%d/%y")%>
+      </th>
+  <% end %>
+
+</tr>
+    </thead>

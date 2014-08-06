@@ -12,12 +12,12 @@ class Schedule < ActiveRecord::Base
   
   def self.horizon(workweek)
     #Get 4 workweeks of schedule data
-    schedules = self.where("workweek >= ? and workweek < ?", workweek, workweek + 4).order("grid_id,date")
+    schedules = self.where("workweek >= ? and workweek < ?", workweek, workweek + 4).order("grid_id,date").includes("employee")
     gridSchedules = schedules.group_by{ |s| s.grid_id}
     #create hash that is grid_ids x 4WW and initialize to "unassigned"
     #set default for outer hash
-    scheduleMatrix = Hash.new("unassigned")
-    gridSchedules.each do |key, value|
+    scheduleMatrix = Hash.new("EMPTY")
+    gridSchedules.each do |key, days|
       whosWorking = Hash[ days.map{ |d| [d.date, d.employee.name] } ]
       #set default for inner hash
       whosWorking.default = "unassigned"

@@ -2,19 +2,9 @@
     <h4> Schedule for WW: <%= @workweek %> </h4>
 Dates: <%= @today %> - <%= @today.next_day(27)%>
 <table id="schedule" class="display" cellspacing="0" width="100%">
-        <thead>
-        <tr>
-          <th>Position</th>
-          <% (0..27).each do |d| %>
-              <th>
-                  <%= @today.next_day(d).strftime("%a-%m/%d/%y")%>
-              </th>
-          <% end %>
-
-        </tr>
-    </thead>
+        <%= render partial: 'scheduleHeader' %>
     <tbody>
-        <%= render :partial => 'scheduleDetails' %>
+        <%= render partial: 'scheduleDetails', collection: @grids %>
     </tbody>
 </table>
 </div>
